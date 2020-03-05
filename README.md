@@ -13,18 +13,15 @@ Document illustrates following aspects of API:
 ```URL: /api/products```
 ```Authentication: none```
 #### Response
-```JSON
+```JS
 [
 	{
 		id, // int
 		categoryId, // int
-        title, // string
-        description, // string
-        price, // double
-        amount, // int
-	},
-	{
-		...
+		title, // string
+		description, // string
+		price, // double
+		amount, // int
 	}
 ]
 ```
@@ -33,14 +30,14 @@ Document illustrates following aspects of API:
 ```Mehtod: GET```
 ```URL: /api/products/<ProductID>```
 #### Response
-```JSON
+```JS
 {
 	Id, // int <ProductID>
 	CategoryId, // int
-    Title, // string
-    Description, // string
-    Price, // double
-    Amount, // int
+	Title, // string
+	Description, // string
+	Price, // double
+	Amount, // int
 }
 ```
 ***
@@ -51,15 +48,15 @@ Document illustrates following aspects of API:
 ```JS
 // Request body
 {
-	CategoryId, // int
-    Title, 		// string
-    Description,// string
-    Price, 		// double
-    Amount, 	// int
+	CategoryId, 	// int
+	Title, 		// string
+	Description,	// string
+	Price, 		// double
+	Amount, 	// int
 }
 ```
 #### Response
-```JSON
+```JS
 {
 	data,  // product object - undefined if errors occured
 }
@@ -72,15 +69,15 @@ Document illustrates following aspects of API:
 ```JS
 // Request body
 {
-	CategoryId, // int
-    Title, 		// string
-    Description,// string
-    Price, 		// double
-    Amount, 	// int
+	CategoryId, 	// int
+	Title, 		// string
+	Description,	// string
+	Price, 		// double
+	Amount, 	// int
 }
 ```
 #### Response
-```JSON
+```JS
 {
 	data,  // product object - undefined if errors occured
 }
@@ -90,7 +87,7 @@ Document illustrates following aspects of API:
 ```Mehtod: DELETE```
 ```URL: /api/product/<ProductID>```
 #### Response
-```JSON
+```JS
 {
 	done,  // boolean - true if successfully done
 }
@@ -100,19 +97,19 @@ Document illustrates following aspects of API:
 ```Method: POST```
 ```URL: /api/filter```
 ```Content-Type: application/json```
-```JSON
+```JS
 // Request Body
 {
 	Title,		// string - search by title, empty '' to unset
-    CategoryId,	// int - get all by category id, 0 to unset
-    PriceFrom,	// double - get by starting price, 0 to unset
-    PriceTo,	// double - get by ending price, 0 to unset
-    ASC,		// boolean - true for ascending price, vice-versa
-    Page,		// int - which page you want?
+	CategoryId,	// int - get all by category id, 0 to unset
+	PriceFrom,	// double - get by starting price, 0 to unset
+	PriceTo,	// double - get by ending price, 0 to unset
+	ASC,		// boolean - true for ascending price, vice-versa
+	Page,		// int - which page you want?
 }
 ```
 #### Response
-```JSON
+```JS
 {
 	page,		// int - currently served page
 	pageCount, 	// int - number of pages that match given filters
@@ -123,13 +120,12 @@ Document illustrates following aspects of API:
 ```Method: GET```
 ```URL: /api/filter```
 #### Response
-```JSON
+```JS
 [
 	{
-		id, // array of categories
+		id, 	// array of categories
 		name, 
-	},
-	...
+	}
 ]
 ```
 
